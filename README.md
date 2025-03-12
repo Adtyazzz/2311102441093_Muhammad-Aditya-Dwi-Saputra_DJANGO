@@ -1,11 +1,32 @@
-# Django
-## Apa itu Django ?
-django merupakan sebuah framwork berbasis python yang digunakan untuk membuat sebuah aplikasi
+# Personal Portfolio
 
-## cara menjalankan django
-1. Buka cmd 
-2. install virtual envirotmentnya dengan cara  "python -m venv .venv"
-3. setelah itu aktifkan venv dengan "cd .venv/scripts" setelah itu ketik activate
-4. setelah itu kita install dajango dengan mengetikkan pip install django
-5. setelah itu kita buat folder project kita dengan cara "django-admin startproject webku" (contoh punya saya)
-6. yang terakhir kita jalankan server dengan cara "python manage.py runserver"
+Website ini merupakan portfolio pribadi saya yang berisi tentang informasi diri saya.
+
+## Ada apa saja isi dihalaman website saya?
+
+1. Halaman home - Menampilkan ringkasan dari masing-masing halaman.
+2. Halaman about - Menampilkan tulisan yang saya tulis.
+
+## Cara Menjalankan Project
+1. buka cmd
+2. lalu masuk kedalam folder website dan masuk ke direktorinya
+3. setelah itu kita buat venv, saya memakai env. dengan mengetik 
+```
+py -m venv .venv
+```
+4. untuk mengaktifkannya, kita masuk ke folder env, masuk lagi ke folder Scripts, setelah itu kita ketik 
+```
+activate
+```
+5. kita sudah didalam lingkungkan virtual, setelah itu kita install django-nya dengan mengetik 
+```
+pip install django
+```
+6. dan kemudian kita membuat project baru django dengan mengetik  (saya menggunakan newwebsite)
+```
+django-admin startproject websiteku
+```
+7. project telah dibuat dan untuk mengeceknya kita bisa mengetik 
+```
+py manage.py runserver
+```
