@@ -7,6 +7,10 @@ Website ini merupakan portfolio pribadi saya yang berisi tentang informasi diri 
 1. Halaman home - Menampilkan ringkasan dari masing-masing halaman.
 2. Halaman about - Menampilkan tulisan yang saya tulis.
 
+## seaatelah itu saya menambahkan apps pada project saya
+1. apps yang pertama bernama berita 
+2. dan yang kedua bernama peangguna
+
 ## Cara Menjalankan Project
 1. buka cmd
 2. lalu masuk kedalam folder website dan masuk ke direktorinya
@@ -26,7 +30,15 @@ pip install django
 ```
 django-admin startproject websiteku
 ```
-7. project telah dibuat dan untuk mengeceknya kita bisa mengetik 
+7. setelah itu jika ingin membuat apps kita bisa mengetik
+```
+python manage.py startapp "kita dapat membuat sesuai keinginan kita"
+```
+8. serelah itu, untuk membuat migration kita dapat mengetikkan
+```
+python manage.py makemigrations "nama apps yang kita buat"
+```
+9. Setelah project dan apps telah dibuat dan untuk mengeceknya kita bisa mengetik 
 ```
 py manage.py runserver
 ```
