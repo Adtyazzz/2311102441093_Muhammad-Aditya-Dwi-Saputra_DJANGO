@@ -7,7 +7,7 @@ Website ini merupakan portfolio pribadi saya yang berisi tentang informasi diri 
 1. Halaman home - Menampilkan ringkasan dari masing-masing halaman.
 2. Halaman about - Menampilkan tulisan yang saya tulis.
 
-## seaatelah itu saya menambahkan apps pada project saya
+## setelah itu saya menambahkan apps pada project saya
 1. apps yang pertama bernama berita 
 2. dan yang kedua bernama peangguna
 
