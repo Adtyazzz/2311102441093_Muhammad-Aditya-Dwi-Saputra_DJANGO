@@ -1,19 +1,18 @@
 from django.shortcuts import render
 
 def home(request):
-    template_name = 'home.html'
+    template_name = "halaman/index.html"
     context = {
-        'title': 'selamat datang di halaman home',
-        'description': 'web portfolio saya',
-        'body': 'Halaman home'
+        'title' : 'my home',
+        'welcome' :'welcome my home',
     }
     return render(request, template_name, context)
 
+
 def about(request):
-    template_name = 'about.html'
+    template_name = "about.html"
     context = {
-        'title': 'selamat datang di halaman about',
-        'description': 'web portfolio saya',
-        'body': 'Halaman home'
+        'title' : 'about me',
+        'welcome' :'ini page about me',
     }
     return render(request, template_name, context)
