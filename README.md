@@ -14,6 +14,7 @@ Website ini merupakan portfolio pribadi saya yang berisi tentang informasi diri 
 4. dan menambahkan template halaman
 5. Menambahkan CRUD
 6. Menambahkan slug
+7. Menambahkan menu Login dan registrasi
 
 ## Cara Menjalankan Project
 1. buka cmd
