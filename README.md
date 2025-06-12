@@ -45,5 +45,17 @@ python manage.py makemigrations "nama apps yang kita buat"
 ```
 9. Setelah project dan apps telah dibuat dan untuk mengeceknya kita bisa mengetik 
 ```
+```
+10. untuk setting static pada setting.py
+
+    STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+```
 py manage.py runserver
 ```
