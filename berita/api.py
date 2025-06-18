@@ -19,15 +19,33 @@ def api_kategori_list(request):
     serializer = KategoritSerializer(kategori, many=True)
     return Response(serializer.data)
 
-@api_view(['GET'])
+@api_view(['GET', 'PUT', 'POST'])
 def api_kategori_detail(request, id_kategori):
-    kategori = Kategori.objects.get(id=id_kategori)
     try:
-        serializer = KategoritSerializer(kategori, many=False)
-        return Response(serializer.data)
-    
+        kategori = Kategori.objects.get(id=id_kategori)
     except:
         return Response({'message:data kategori tidak ditemukan'}, status=status.HTTP_404_NOT_FOUND )
+
+    if request.method == "GET":   
+        serializer = KategoritSerializer(kategori, many=False)
+        return Response(serializer.data)
+    elif request.method == "PUT":
+        serializer = KategoritSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        pass
+    
+    
+@api_view(['POST'])
+def api_kategori_add(request):
+    serializer = KategoritSerializer(data=request.data)
+    if serializer.is_valid():
+         serializer.save()
+         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
 @api_view(['GET'])
@@ -45,4 +63,13 @@ def api_artikel_detail(request, id_artikel):
         return Response(serializer.data)
     
     except:
-        return Response({'message:data artikel tidak ditemukan'}, status=status.HTTP_404_NOT_FOUND )    
+        return Response({'message:data artikel tidak ditemukan'}, status=status.HTTP_404_NOT_FOUND ) 
+
+@api_view(['POST'])
+def api_artikel_add(request):
+    serializer = ArtikelSerializer(data=request.data)
+    if serializer.is_valid():
+         serializer.save()
+         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+       

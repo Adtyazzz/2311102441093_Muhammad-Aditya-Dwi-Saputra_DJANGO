@@ -20,8 +20,12 @@ class KategoritSerializer(serializers.ModelSerializer):
         fields = ['id', 'nama']
 
 class ArtikelSerializer(serializers.ModelSerializer):
-    author = UserSerializer()
-    kategori = KategoritSerializer()
+    author = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    kategori = serializers.PrimaryKeyRelatedField(queryset=Kategori.objects.all()) 
+
+    kategori_detail = KategoritSerializer(source='kategori', read_only=True)
+    author_detail = UserSerializer(source='author', read_only=True)
     class Meta:
         model = Artikel
-        fields = ['id', 'judul', 'isi', 'kategori', 'author', 'thumbnail', 'slug']
+        fields = ['id', 'judul', 'isi', 'kategori', 'author', 'thumbnail', 'slug', 'kategori_detail', 'author_detail']
+        read_only_fields = ('kategori_detail', 'author_detail')
