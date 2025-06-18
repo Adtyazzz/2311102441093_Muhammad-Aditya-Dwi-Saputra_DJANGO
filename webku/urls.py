@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 
 from .views import home, about, contact, detail_artikel
 from webku.authentikasi import akun_login, akun_registrasi, akun_logout
+from berita.api import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,9 +18,15 @@ urlpatterns = [
     path('artikel/<slug:slug>', detail_artikel, name="detail_artikel"),
     
     path('dashboard/', include("berita.urls")),
+    path('api/author/list', api_author_list),
+    path('api/kategori/list', api_kategori_list),
+    path('api/artikel/detail/<int:id_artikel>', api_artikel_detail),
+    path('api/kategori/detail/<int:id_kategori>', api_kategori_detail),
+    path('api/artikel/list', api_artikel_list),
     path('authentikasi/', akun_login, name="akun_login"),
     path('authentikasi/registrasi', akun_registrasi, name="akun_registrasi"),
     path('authentikasi/logout', akun_logout, name="akun_logout"),
+    path('api-auth/', include('rest_framework.urls'))
 ]
 
 if settings.DEBUG:
